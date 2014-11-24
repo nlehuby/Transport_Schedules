@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
+
+    <title>Transport Schedules</title>
+    <link href="styles/layout.css" rel="stylesheet" type="text/css">
+    <link href="styles/jquery-ui.css" rel="stylesheet" type="text/css">
+    <style>
+      body {
+        font-family: 'Fira Sans', sans-serif;
+      }
+    </style>
+    <!-- Inline scripts are forbidden in Firefox OS apps (CSP restrictions),
+         so we use a script file. -->
+    
+  </head>
+
+  <body>
+    <header>
+      <p style="padding:10px 10px 0px 10px;">Rechercher arrêt :</p>
+      <center><input style="margin:10px;width:260px" id="stop_area_search" class="searchform"></center>
+    </header>
+    <section class="gaia-list fit scroll sticky">
+      
+      <div id="directions_list"> </div>
+    </section>
+    <footer class="gaia-footer">
+      <button class="peter-river-flat-button" id="list">Retour</button>
+      <button class="carrot-flat-button" id="addbutton">Afficher</button>
+    </footer>
+   <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="jquery-ui.min.js"></script>
+    <script src="app.js"></script>
+    <script src="add.js"></script>
+    
+  </body>
+
+</html>

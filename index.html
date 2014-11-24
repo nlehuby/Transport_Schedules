@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
+
+    <title>Transport Schedules</title>
+    <link href="styles/layout.css" rel="stylesheet" type="text/css">
+    <style>
+      body {
+        font-family: 'Fira Sans', sans-serif;
+      }
+    </style>
+
+    <!-- Inline scripts are forbidden in Firefox OS apps (CSP restrictions),
+         so we use a script file. -->
+    
+  </head>
+
+  <body>
+    <!-- This code is in the public domain. Enjoy! -->
+    <header>
+      <h1 id="arret"></h1>
+      <h2 id="ligne"></h2>
+      <h3 id="direction"></h3>
+    </header>
+    <section class="gaia-list fit scroll sticky">
+      <article class="impair">
+        <span class="hour">00</span>
+        <span id="min00" class="min"></span>
+      </article>
+      <article class="pair">
+        <span class="hour">01</span>
+        <span id="min01" class="min"></span>
+      </article>
+      <article class="impair">
+        <span class="hour">02</span>
+        <span id="min02" class="min"></span>
+      </article>
+      <article class="pair">
+        <span class="hour">03</span>
+        <span id="min03" class="min"></span>
+      </article>
+      <article class="impair">
+        <span class="hour">04</span>
+        <span id="min04" class="min"></span>
+      </article>
+      <article class="pair">
+        <span class="hour">05</span>
+        <span id="min05" class="min"></span>
+      </article>
+      <article class="impair">
+        <span class="hour">06</span>
+        <span id="min06" class="min"></span>
+      </article>
+      <article class="pair">
+        <span class="hour">07</span>
+        <span id="min07" class="min"></span>
+      </article>
+      <article class="impair">
+        <span class="hour">08</span>
+        <span id="min08" class="min"></span>
+      </article>
+      <article class="pair">
+        <span class="hour">09</span>
+        <span id="min09" class="min"></span>
+      </article>
+      <article class="impair">
+        <span class="hour">10</span>
+        <span id="min10" class="min"></span>
+      </article>
+      <article class="pair">
+        <span class="hour">11</span>
+        <span id="min11" class="min"></span>
+      </article>
+      <article class="impair">
+        <span class="hour">12</span>
+        <span id="min12" class="min"></span>
+      </article>
+      <article class="pair">
+        <span class="hour">13</span>
+        <span id="min13" class="min"></span>
+      </article>
+      <article class="impair">
+        <span class="hour">14</span>
+        <span id="min14" class="min"></span>
+      </article>
+      <article class="pair">
+        <span class="hour">15</span>
+        <span id="min15" class="min"></span>
+      </article>
+      <article class="impair">
+        <span class="hour">16</span>
+        <span id="min16" class="min"></span>
+      </article>
+      <article class="pair">
+        <span class="hour">17</span>
+        <span id="min17" class="min"></span>
+      </article>
+      <article class="impair">
+        <span class="hour">18</span>
+        <span id="min18" class="min"></span>
+      </article>
+      <article class="pair">
+        <span class="hour">19</span>
+        <span id="min19" class="min"></span>
+      </article>
+      <article class="impair">
+        <span class="hour">20</span>
+        <span id="min20" class="min"></span>
+      </article>
+      <article class="pair">
+        <span class="hour">21</span>
+        <span id="min21" class="min"></span>
+      </article>
+      <article class="impair">
+        <span class="hour">22</span>
+        <span id="min22" class="min"></span>
+      </article>
+      <article class="pair">
+        <span class="hour">23</span>
+        <span id="min23" class="min"></span>
+      </article>
+    </section>
+    <footer class="gaia-footer">
+      <button class="peter-river-flat-button" id="list">Liste</button>
+      <button class="carrot-flat-button" id="add">Ajouter</button>
+    </footer>
+    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
+    
+    <script src="script.js"></script>
+    <script src="app.js"></script>
+  </body>
+
+</html>
