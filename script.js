@@ -7,6 +7,8 @@ var qsArret = getParameterByName('arret');
 
 check_offline();
 
+
+
 function check_offline(){
     // are-we online ?
     var request = new window.XMLHttpRequest({mozSystem: true});
@@ -267,12 +269,14 @@ function display_FH(FH_data_object)  {
                 span_min.innerHTML = FH_data_object.onzePM[j];
                 document.getElementById("min23").appendChild(span_min);
                 ++j;
-            }              
+            }
+
+
 }
 
 function Navitia_get_FH(code_arret,code_route)  {
    console.log('appel navitia : récupération de la fiche horaire')
-   var navitia_params = "stop_areas/" + code_arret + "/routes/" + code_route + "/stop_schedules?date_time=20141122T010000";
+   var navitia_params = "stop_areas/" + code_arret + "/routes/" + code_route + "/stop_schedules?from_datetime=20141122T010000";
    $.ajax({
         url: "http://"+ navitia_api_key+":@api.navitia.io/v1/coverage/"+ navitia_coverage + "/" + navitia_params,
         dataType: 'json',
@@ -439,3 +443,12 @@ function getParameterByName(name) {
         results = regex.exec(location.search);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
+
+    $(document).ready(function(){
+    var offset = $("#min05").offset();
+        console.log(offset)
+$(document).animate({
+    scrollTop: offset.top,
+    scrollLeft: offset.left
+}); 
+    });

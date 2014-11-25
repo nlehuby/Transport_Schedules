@@ -41,8 +41,10 @@ $(document).ready(function(){
             success: function( data ) {
                ListData = [];
                for (var i = 0; i < data['places'].length; i++) {
-                  ListData.push(data['places'][i]['name'])
+                  //ListData.push(data['places'][i]['name'])
+                  ListData.push({"id": data['places'][i]['id'], "value": data['places'][i]['name']})
                   }
+               //console.log(ListData)
                response(ListData);
                code_arret = data['places'][0]['id']
                }
@@ -54,12 +56,19 @@ $(document).ready(function(){
 
    $("#addbutton").on('click', function () {      
            if ($('#stop_area_search').val()!='')
-            {
-               //appeler navitia
+            {  
+             //récupérer l'id du stop_area sélectionné par l'utilisateur
+             for (var i = 0; i <ListData.length; i++) {
+                if (ListData[i]['value'] == $('#stop_area_search').val()){
+                   code_arret = ListData[i]['id']
+                } 
+             }
+             //vider la liste des routes
+                 //TODO
+             //appeler navitia et afficher les résultats
              Navitia_get_directions_from_stop_area(code_arret)  
-           
-            
-            $('#stop_area_search').val("");
+
+            //$('#stop_area_search').val("");
             }
     });
 
