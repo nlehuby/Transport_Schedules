@@ -26,7 +26,7 @@ function List_FH_from_localStorage()
       //  + '<p>' + fiche_horaire.direction + '</p>';
       var div_list = document.createElement("div");
       div_list.className = "div_list";
-      div_list.innerHTML = '<p><a href="index.html?route='+ fiche_horaire.code_route +'&arret='+ fiche_horaire.code_arret +'">' + fiche_horaire.arret + '</a></p>'
+      div_list.innerHTML = '<p><a href="FH.html?route='+ fiche_horaire.code_route +'&arret='+ fiche_horaire.code_arret +'">' + fiche_horaire.arret + '</a></p>'
         + '<p>' + fiche_horaire.ligne + '</p>'
         + '<p>' + fiche_horaire.direction + '</p>';
       document.getElementById("liste").appendChild(div_list);

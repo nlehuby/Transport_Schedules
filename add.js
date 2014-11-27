@@ -14,7 +14,7 @@ function Navitia_get_directions_from_stop_area(code)  {
                console.log(data)
                for (var i = 0; i < data['routes'].length; i++) {
                   var elem_dir = document.createElement("div");
-                  elem_dir.innerHTML ='<a href="index.html?route='+ data['routes'][i]['id'] +'&arret='+  code +'">Ligne '+data['routes'][i]['line']['code'] +", direction "+ data['routes'][i]['direction']['name'] +'</a>';
+                  elem_dir.innerHTML ='<a href="FH.html?route='+ data['routes'][i]['id'] +'&arret='+  code +'">Ligne '+data['routes'][i]['line']['code'] +", direction "+ data['routes'][i]['direction']['name'] +'</a>';
                   elem_dir.className = "elem_dir";
                   document.getElementById("directions_list").appendChild(elem_dir);
                }
