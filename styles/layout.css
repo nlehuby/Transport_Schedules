@@ -414,5 +414,5 @@ p {
     .gaia-list article .min { width: calc(100% - 60px);}
     .gaia-list .impair .min { background: #fafafa;}
     .gaia-list .pair .min { background: #ffffff;}
-       .gaia-list article span span { display: inline-block; width: 34px; height: 60px; line-height: 60px; margin: 0px; padding: 0px; border-right: 1px dashed #eaeaea; text-align: center; color: #777;}
+       .gaia-list article span span { display: inline-block; width: 40px; height: 60px; line-height: 60px; margin: 0px; padding: 0px; border-right: 1px dashed #eaeaea; text-align: center; color: #777;}
 

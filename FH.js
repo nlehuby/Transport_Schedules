@@ -68,6 +68,15 @@ function display_FH(FH_data_object)  {
             document.getElementById("direction").innerHTML = FH_data_object.direction;   
     
             var j = 0;
+            document.getElementById("notes").innerHTML = ""
+            while (j < FH_data_object.notes.length)
+            {
+                var div = document.createElement("div");
+                div.innerHTML = FH_data_object.notes[j];
+                document.getElementById("notes").appendChild(div);
+                ++j;
+            }    
+            var j = 0;
             document.getElementById("min00").innerHTML = ""
             while (j < FH_data_object.minuit.length)
             {
@@ -342,20 +351,24 @@ function Navitia_get_FH(code_arret,code_route)  {
             fiche_horaire.onzePM = []
             fiche_horaire.notes = []
 
-            //parcours des notes -TODO à ajouter quand une section sera prévue dans le HTML (TODO)
-            /*
+            
             for (var j = 0; j < data['notes'].length; ++j) {
-                fiche_horaire['notes'].push(data['notes'][j]['value'])
-            }*/
+                ma_note = ''
+                for (var k = 0; k <= j; k++) {
+                    ma_note += "*"
+                  }
+                ma_note += ' : ' + data['notes'][j]['value']
+                fiche_horaire['notes'].push(ma_note)
+            }
 
             for (var i = 0; i < data['stop_schedules'][0]['date_times'].length; ++i) {
                 heures = data['stop_schedules'][0]['date_times'][i]['date_time'].slice(9, 11).toString()
                 minutes = data['stop_schedules'][0]['date_times'][i]['date_time'].slice(11, 13).toString()
 
-                /*
+                
                 if (data['stop_schedules'][0]['date_times'][i]['links'][0]) // si j'ai une note
                 {
-                    minutes += ' '
+                    //minutes += ' '
 
                     for (var j = 0; j < fiche_horaire.notes.length; ++j) { //je parcours les notes
                         if (data['stop_schedules'][0]['date_times'][i]['links'][0]['id'] == data['notes'][j]['id']) // quand je trouve la bonne
@@ -367,7 +380,7 @@ function Navitia_get_FH(code_arret,code_route)  {
                             }
                         }
                     }
-                }*/
+                }
 
                 if (heures == '13') {
                     fiche_horaire.unPM.push(minutes)
