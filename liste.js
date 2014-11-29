@@ -4,6 +4,12 @@ $list.onclick = function()
   window.location.href = "add.html";
 }
 
+var $about = document.getElementById("about");
+$about.onclick = function()
+{
+  window.location.href = "about.html";
+}
+
 function List_FH_from_localStorage()
 {
   var fiche_horaire = {};
@@ -12,7 +18,7 @@ function List_FH_from_localStorage()
   LSlength = localStorage.length;
   if (LSlength == 0)
   {
-    document.getElementById("liste").innerHTML = '<p>Cette liste est vide.</p>'
+    document.getElementById("liste").innerHTML = "<p style='padding:10px 10px 0px 10px;'>Vous n'avez pas encore enregistré de fiches horaires. Recherchez un arrêt pour commencer.</p><hr>"
   }
   else
   {

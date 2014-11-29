@@ -33,14 +33,7 @@ $add.onclick = function(){
 
 /* scroll sur les horaires à venir */
 //TODO : pourquoi ça marche pas ?!
-$('html','body').ready(function(){
-    var offset = $("#min05").offset();
-    //console.log(offset)
-    $(document).animate({
-    scrollTop: offset.top,
-    scrollLeft: offset.left
-    }); 
-});
+$("html, body").animate({ scrollTop: $('#min02').offset().top }, 1000);
 
 /* fonctions utilisées */
 function localStorage_get_FH(Arret, Route){
