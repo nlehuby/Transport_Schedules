@@ -105,7 +105,8 @@ function retry_on_navitia_error(data, code_arret,code_route){
 
 function Navitia_get_FH(code_arret,code_route)  {
    console.log('appel navitia : récupération de la fiche horaire')
-   var navitia_params = "stop_areas/" + code_arret + "/routes/" + code_route + "/stop_schedules?from_datetime=20141122T010000";
+   //TODO : passer la date du jour !
+   var navitia_params = "stop_areas/" + code_arret + "/routes/" + code_route + "/stop_schedules?from_datetime=20150123T010000";
    $.ajax({
         url: "http://"+ navitia_api_key+":@api.navitia.io/v1/coverage/"+ navitia_coverage + "/" + navitia_params,
         dataType: 'json',
@@ -130,12 +131,14 @@ function Navitia_get_FH(code_arret,code_route)  {
             // init notes avec données navitia
             for (var j = 0; j < data['notes'].length; ++j) {
                 ma_note = ''
-                for (var k = 0; k <= j; k++) {
+                for (var k = data['notes'].length - j; k > 0 ; k--) {    
                     ma_note += "*"
                   }
                 ma_note += ' : ' + data['notes'][j]['value']
                 fiche_horaire['notes'].push(ma_note)
+                
             }
+            fiche_horaire['notes'].reverse();
 
             //analyse des données horaires navitia
             for (var i = 0; i < data['stop_schedules'][0]['date_times'].length; ++i) {
@@ -151,7 +154,7 @@ function Navitia_get_FH(code_arret,code_route)  {
                         if (data['stop_schedules'][0]['date_times'][i]['links'][0]['id'] == data['notes'][j]['id']) // quand je trouve la bonne
                         {
                             //créer autant d'étoiles en js
-                            for (var k = 0; k <= j; k++) {
+                            for (var k = data['notes'].length - j; k > 0 ; k--) {
                                 
                                 minutes += "*"
                             }
