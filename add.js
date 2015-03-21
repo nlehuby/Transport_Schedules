@@ -64,7 +64,7 @@ $(document).ready(function(){
                 } 
              }
              //vider la liste des routes
-                 //TODO
+               document.getElementById("directions_list").innerHTML = '';
              //appeler navitia et afficher les résultats
              Navitia_get_directions_from_stop_area(code_arret)  
 

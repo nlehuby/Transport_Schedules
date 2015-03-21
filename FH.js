@@ -106,7 +106,7 @@ function retry_on_navitia_error(data, code_arret,code_route){
 function Navitia_get_FH(code_arret,code_route)  {
    console.log('appel navitia : récupération de la fiche horaire')
    var navitia_params = "stop_areas/" + code_arret + "/routes/" + code_route + "/stop_schedules?from_datetime=" + new Date().toLocaleFormat('%Y%m%dT000000');
-   console.log(navitia_params);
+   //console.log(navitia_params);
    $.ajax({
         url: "http://"+ navitia_api_key+":@api.navitia.io/v1/coverage/"+ navitia_coverage + "/" + navitia_params,
         dataType: 'json',
