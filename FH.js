@@ -20,9 +20,9 @@ $(document).ready(function(){
     console.log("Tentative d'affichage FH depuis navitia");
     Navitia_get_FH(qsArret,qsRoute);
     
-    /* scroll sur les horaires à venir */
-    //TODO : pourquoi ça marche pas ?!
-    $("html, body").animate({ scrollTop: $('#min19').offset().top }, 1000);
+    /* scroll sur les horaires les plus proches */
+    $( "#min"+new Date().getHours() )[0].scrollIntoView();
+    
     
 });
 

@@ -55,7 +55,7 @@ $(document).ready(function(){
                     url: "https://api.navitia.io/v1/coverage/"+ navitia_coverage + "/" + navitia_params,
                     dataType: "json",
                     success: function( data ) {
-                       console.log(data)
+                       //console.log(data) // DEBUG
                        for (var i = 0; i < data['routes'].length; i++) {
                           var elem_dir = document.createElement("div");
                           elem_dir.innerHTML ='<a href="FH.html?route='+ data['routes'][i]['id'] +'&arret='+  code_arret +'">Ligne '+data['routes'][i]['line']['code'] +", direction "+ data['routes'][i]['direction']['name'] +'</a>';
