@@ -9,12 +9,9 @@ var nb_retry = 0;
 /* intelligence de la page */
 $(document).ready(function(){
     $.ajaxSetup( {
-       xhr: function() {return new window.XMLHttpRequest({mozSystem: true});}
+       beforeSend: function(xhr) { xhr.setRequestHeader("Authorization", "Basic " + btoa(navitia_api_key + ":" )); }
        });
-    /* scroll sur les horaires à venir */
-    //TODO : pourquoi ça marche pas ?!
-    $("html, body").animate({ scrollTop: $('#min19').offset().top }, 1000);
-    
+          
     console.log("FH arrêt : " + qsArret + " ; route : " + qsRoute);
     
     console.log('Affichage FH depuis localStorage');
@@ -22,6 +19,11 @@ $(document).ready(function(){
 
     console.log("Tentative d'affichage FH depuis navitia");
     Navitia_get_FH(qsArret,qsRoute);
+    
+    /* scroll sur les horaires à venir */
+    //TODO : pourquoi ça marche pas ?!
+    $("html, body").animate({ scrollTop: $('#min19').offset().top }, 1000);
+    
 });
 
 /* liens dans la page */
@@ -108,7 +110,7 @@ function Navitia_get_FH(code_arret,code_route)  {
    var navitia_params = "stop_areas/" + code_arret + "/routes/" + code_route + "/stop_schedules?from_datetime=" + new Date().toLocaleFormat('%Y%m%dT000000');
    //console.log(navitia_params);
    $.ajax({
-        url: "http://"+ navitia_api_key+":@api.navitia.io/v1/coverage/"+ navitia_coverage + "/" + navitia_params,
+        url: "https://api.navitia.io/v1/coverage/"+ navitia_coverage + "/" + navitia_params,
         dataType: 'json',
         global: true,
         error: function(data) {retry_on_navitia_error(data, code_arret,code_route)},
