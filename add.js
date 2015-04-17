@@ -31,7 +31,11 @@ $(document).ready(function(){
                }
             });
          },
-         minLength: 3
+         minLength: 3,
+         select: function(event, ui){
+             code_arret = ui.item.id;
+             }
+       
    });
 });
 
@@ -39,12 +43,6 @@ $(document).ready(function(){
    $("#addbutton").on('click', function () {      
            if ($('#stop_area_search').val()!='')
             {  
-             //récupérer l'id du stop_area sélectionné par l'utilisateur
-             for (var i = 0; i <ListData.length; i++) {
-                if (ListData[i]['value'] == $('#stop_area_search').val()){
-                   code_arret = ListData[i]['id']
-                } 
-             }
              //vider la liste des routes
                 document.getElementById("directions_list").innerHTML = '';
                 
