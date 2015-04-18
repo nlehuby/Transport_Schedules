@@ -39,6 +39,12 @@ $add.onclick = function(){
     localStorage.setItem(fiche_horaire.code_arret+':'+fiche_horaire.code_route, JSON.stringify(fiche_horaire));
 }
 
+var $maj = document.getElementById("lien_maj");
+$maj.onclick = function(){
+    console.log('mise à jour de la FH');
+    Navitia_get_FH(qsArret,qsRoute);
+}
+
 /* fonctions utilisées */
 function localStorage_get_FH(Arret, Route){
     console.log('localStorage : récupération de la fiche horaire')
@@ -195,3 +201,7 @@ function getParameterByName(name) {
         results = regex.exec(location.search);
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
+
+
+  
+
