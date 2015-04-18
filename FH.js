@@ -5,6 +5,7 @@ var qsRoute = getParameterByName('route');
 var qsArret = getParameterByName('arret');
 
 var nb_retry = 0;
+var today = new Date()
 
 /* intelligence de la page */
 $(document).ready(function(){
@@ -21,7 +22,7 @@ $(document).ready(function(){
     Navitia_get_FH(qsArret,qsRoute);
     
     /* scroll sur les horaires les plus proches */
-    $( "#min"+new Date().getHours() )[0].scrollIntoView();
+    $( "#min" + today.getHours() )[0].scrollIntoView();
     
     
 });
@@ -34,7 +35,7 @@ $list.onclick = function(){
 
 var $add = document.getElementById("add");
 $add.onclick = function(){
-    alert("Sélection horaire enregistrée.");
+    alert("Fiche horaire enregistrée");
     localStorage.setItem(fiche_horaire.code_arret+':'+fiche_horaire.code_route, JSON.stringify(fiche_horaire));
 }
 
@@ -48,8 +49,7 @@ function localStorage_get_FH(Arret, Route){
     LSlength = localStorage.length;
     for (i=0; i<LSlength; i++)
     {
-      fiche_horaire_json = $.parseJSON(localStorage[localStorage.key(i)]);
-      fiche_horaire = fiche_horaire_json;
+      fiche_horaire = $.parseJSON(localStorage[localStorage.key(i)]);
       if (fiche_horaire.code_route == Route && fiche_horaire.code_arret == Arret)
       {
           display_FH(fiche_horaire);
@@ -62,6 +62,7 @@ function display_FH(FH_data_object)  {
             document.getElementById("arret").innerHTML = FH_data_object.arret;
             document.getElementById("ligne").innerHTML = FH_data_object.ligne;
             document.getElementById("direction").innerHTML = FH_data_object.direction;   
+            document.getElementById("maj").innerHTML = FH_data_object.maj; 
     
             //traitement des notes
             var j = 0;
@@ -105,9 +106,19 @@ function retry_on_navitia_error(data, code_arret,code_route){
     }
 }
 
+function turn_number_to_day(number){
+    if (number == 1) {return "lundi"}
+    else if (number == 2) {return "mardi"}
+    else if (number == 3) {return "mercredi"}
+    else if (number == 4) {return "jeudi"}
+    else if (number == 5) {return "vendredi"}            
+    else if (number == 6) {return "samedi"}
+    else if (number == 0) {return "dimanche"}    
+}
+
 function Navitia_get_FH(code_arret,code_route)  {
    console.log('appel navitia : récupération de la fiche horaire')
-   var navitia_params = "stop_areas/" + code_arret + "/routes/" + code_route + "/stop_schedules?from_datetime=" + new Date().toLocaleFormat('%Y%m%dT000000');
+   var navitia_params = "stop_areas/" + code_arret + "/routes/" + code_route + "/stop_schedules?from_datetime=" + today.toLocaleFormat('%Y%m%dT000000');
    //console.log(navitia_params);
    $.ajax({
         url: "https://api.navitia.io/v1/coverage/"+ navitia_coverage + "/" + navitia_params,
@@ -116,11 +127,12 @@ function Navitia_get_FH(code_arret,code_route)  {
         error: function(data) {retry_on_navitia_error(data, code_arret,code_route)},
         success: function(data) {
             //console.log(data) //DEBUG
-            fiche_horaire.code_arret = data['stop_schedules'][0]['stop_point']['stop_area']['id']
-            fiche_horaire.code_route =  data['stop_schedules'][0]['route']['id']            
-            fiche_horaire.arret = data['stop_schedules'][0]['stop_point']['name']
-            fiche_horaire.ligne = data['stop_schedules'][0]['route']['line']['code']
-            fiche_horaire.direction = data['stop_schedules'][0]['route']['direction']['stop_point']['name']
+            fiche_horaire.code_arret = data['stop_schedules'][0]['stop_point']['stop_area']['id'];
+            fiche_horaire.code_route =  data['stop_schedules'][0]['route']['id']  ;          
+            fiche_horaire.arret = data['stop_schedules'][0]['stop_point']['name'];
+            fiche_horaire.ligne = data['stop_schedules'][0]['route']['line']['code'];
+            fiche_horaire.direction = data['stop_schedules'][0]['route']['direction']['stop_point']['name'];
+            fiche_horaire.maj = "<img src='img/maj.png' align='absmiddle'></img> Mise à jour " + turn_number_to_day(today.getDay()) + " " + today.toLocaleFormat('%d/%m');
             
             fiche_horaire.horaires = []
             fiche_horaire.notes = []
