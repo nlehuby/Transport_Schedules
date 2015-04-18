@@ -13,5 +13,6 @@
   "developer": {
     "name": "nlehuby & asleewae",
     "url": "http://navitia.io"
-  }    
+  },
+  "appcache_path": "/appcache.manifest"    
 }
