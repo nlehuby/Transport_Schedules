@@ -12,7 +12,6 @@ Installation
 --------------
 * [Créer une clef d'authentification à l'API navitia](http://auth.navitia.io/)
 * Copier le fichier default.params.js en params.js, et insérer la clef navitia dans le paramètre navitia_api_key
-* Utiliser le WebIDE du Firefox Developer Edition pour tester l'application sur un simulateur Firefox OS ou un terminal (version 2.0 au moins). C'est une application de type empaquetée.
 * Enjoy !
 
 À propos
