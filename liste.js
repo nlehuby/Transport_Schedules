@@ -31,7 +31,7 @@ function List_FH_from_localStorage()
       fiche_horaire = $.parseJSON(localStorage[localStorage.key(i)]);
       var div_list = document.createElement("div");
       div_list.className = "div_list";
-      div_list.innerHTML = '<p><a href="FH.html?route='+ fiche_horaire.code_route +'&arret='+ fiche_horaire.code_arret +'">' + fiche_horaire.arret + '</p>'
+      div_list.innerHTML = '<p><a href="FH.html#fromliste?route='+ fiche_horaire.code_route +'&arret='+ fiche_horaire.code_arret +'">' + fiche_horaire.arret + '</p>'
         + '<p>' + fiche_horaire.ligne + '</p>'
         + '<p>' + fiche_horaire.direction + '</a></p>'
         + '<p>' + '<a href="#" id="'+localStorage.key(i)+'"> <font size="2">Supprimer</font></a>' + '</p>' ; // TODO : idéalement, utiliser un appui long plutôt qu'un lien

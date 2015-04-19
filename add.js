@@ -56,7 +56,7 @@ $(document).ready(function(){
                        //console.log(data) // DEBUG
                        for (var i = 0; i < data['routes'].length; i++) {
                           var elem_dir = document.createElement("div");
-                          elem_dir.innerHTML ='<a href="FH.html?route='+ data['routes'][i]['id'] +'&arret='+  code_arret +'">Ligne '+data['routes'][i]['line']['code'] +", direction "+ data['routes'][i]['direction']['name'] +'</a>';
+                          elem_dir.innerHTML ='<a href="FH.html#fromadd?route='+ data['routes'][i]['id'] +'&arret='+  code_arret +'">Ligne '+data['routes'][i]['line']['code'] +", direction "+ data['routes'][i]['direction']['name'] +'</a>';
                           elem_dir.className = "elem_dir";
                           document.getElementById("directions_list").appendChild(elem_dir);
                        }
