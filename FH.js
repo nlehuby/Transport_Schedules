@@ -48,9 +48,6 @@ $maj.onclick = function(){
 /* fonctions utilisées */
 function localStorage_get_FH(Arret, Route){
     console.log('localStorage : récupération de la fiche horaire')
-    
-    var fiche_horaire = {};
-    var fiche_horaire_json;
 
     LSlength = localStorage.length;
     for (i=0; i<LSlength; i++)
