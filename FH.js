@@ -63,7 +63,7 @@ function localStorage_get_FH(Arret, Route){
 function display_FH(FH_data_object)  {
     //console.log(FH_data_object) //DEBUG
             document.getElementById("arret").innerHTML = FH_data_object.arret;
-            document.getElementById("ligne").innerHTML = FH_data_object.ligne;
+            document.getElementById("ligne").innerHTML = FH_data_object.ligne + ' (' + FH_data_object.reseau + ')';
             document.getElementById("direction").innerHTML = FH_data_object.direction;   
             document.getElementById("maj").innerHTML = FH_data_object.maj; 
     
@@ -134,6 +134,7 @@ function Navitia_get_FH(code_arret,code_route)  {
             fiche_horaire.code_route =  data['stop_schedules'][0]['route']['id']  ;          
             fiche_horaire.arret = data['stop_schedules'][0]['stop_point']['name'];
             fiche_horaire.ligne = data['stop_schedules'][0]['route']['line']['code'];
+            fiche_horaire.reseau = data['stop_schedules'][0]['display_informations']['network'];
             fiche_horaire.direction = data['stop_schedules'][0]['route']['direction']['stop_point']['name'];
             fiche_horaire.maj = "<img src='img/maj.png' align='absmiddle'></img> Mise à jour " + turn_number_to_day(today.getDay()) + " " + today.toLocaleFormat('%d/%m');
             
