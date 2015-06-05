@@ -3,3 +3,5 @@ var $accueil = document.getElementById("accueil");
 $accueil.onclick = function(){
   window.location.href = "liste.html";
 }
+
+document.getElementById("coverage").innerHTML = "(" + navitia_coverage_label +")";
