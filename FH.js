@@ -133,9 +133,9 @@ function Navitia_get_FH(code_arret,code_route)  {
             fiche_horaire.code_arret = data['stop_schedules'][0]['stop_point']['stop_area']['id'];
             fiche_horaire.code_route =  data['stop_schedules'][0]['route']['id']  ;          
             fiche_horaire.arret = data['stop_schedules'][0]['stop_point']['name'];
-            fiche_horaire.ligne = data['stop_schedules'][0]['route']['line']['code'];
+            fiche_horaire.ligne = data['stop_schedules'][0]['display_informations']['code'];
             fiche_horaire.reseau = data['stop_schedules'][0]['display_informations']['network'];
-            fiche_horaire.direction = data['stop_schedules'][0]['route']['direction']['stop_point']['name'];
+            fiche_horaire.direction = data['stop_schedules'][0]['display_informations']['direction'];
             fiche_horaire.maj = "<img src='img/maj.png' align='absmiddle'></img> Mise à jour " + turn_number_to_day(today.getDay()) + " " + today.toLocaleFormat('%d/%m');
             
             fiche_horaire.horaires = []
