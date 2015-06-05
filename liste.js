@@ -27,10 +27,11 @@ function List_FH_from_localStorage()
     document.getElementById("liste").innerHTML = '';
     for (i=0; i<LSlength; i++)
     {
-      if (localStorage.key(i).indexOf("version1") == -1)
+      if (localStorage.key(i).indexOf(FH_version) == -1)
       {
         alert("une nouvelle version de l'application est disponible, vos favoris ont été réinitialisés.");
         localStorage.clear();
+        document.getElementById("liste").innerHTML = "<p style='padding:10px 10px 0px 10px;'>Recherchez un arrêt pour commencer.</p><hr>"
       }
       else
       {
