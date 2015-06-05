@@ -36,7 +36,7 @@ $list.onclick = function(){
 var $add = document.getElementById("add");
 $add.onclick = function(){
     alert("Fiche horaire enregistrée");
-    localStorage.setItem(fiche_horaire.code_arret+':'+fiche_horaire.code_route, JSON.stringify(fiche_horaire));
+    localStorage.setItem(fiche_horaire.code_arret+':'+fiche_horaire.code_route+":version1", JSON.stringify(fiche_horaire));
 }
 
 var $maj = document.getElementById("lien_maj");
