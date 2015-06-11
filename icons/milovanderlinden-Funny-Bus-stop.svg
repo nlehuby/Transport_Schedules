@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:cc="http://creativecommons.org/ns#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:ns1="http://sozi.baierouge.fr"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    id="svg2"
+    sodipodi:docname="funny_stop.svg"
+    inkscape:export-filename="/home/milo/Desktop/funny_stop.png"
+    viewBox="0 0 32 32"
+    sodipodi:version="0.32"
+    inkscape:export-xdpi="90"
+    version="1.0"
+    inkscape:output_extension="org.inkscape.output.svg.inkscape"
+    inkscape:export-ydpi="90"
+    inkscape:version="0.46"
+  >
+  <defs
+      id="defs4"
+    >
+    <filter
+        id="filter3314"
+        height="1.1604"
+        width="1.3695"
+        y="-.080220"
+        x="-.18474"
+        inkscape:collect="always"
+      >
+      <feGaussianBlur
+          id="feGaussianBlur3316"
+          stdDeviation="0.98787905"
+          inkscape:collect="always"
+      />
+    </filter
+    >
+  </defs
+  >
+  <sodipodi:namedview
+      id="base"
+      bordercolor="#666666"
+      inkscape:pageshadow="2"
+      guidetolerance="10"
+      pagecolor="#ffffff"
+      gridtolerance="10000"
+      inkscape:window-height="992"
+      inkscape:zoom="14.375"
+      objecttolerance="10"
+      showgrid="false"
+      borderopacity="1.0"
+      inkscape:current-layer="layer1"
+      inkscape:cx="19.144664"
+      inkscape:cy="10.889667"
+      inkscape:window-y="0"
+      inkscape:window-x="1440"
+      inkscape:window-width="1280"
+      inkscape:pageopacity="0.0"
+      inkscape:document-units="px"
+  />
+  <g
+      id="layer1"
+      inkscape:label="Layer 1"
+      inkscape:groupmode="layer"
+    >
+    <path
+        id="path3241"
+        style="filter:url(#filter3314);fill:#a29b94"
+        transform="matrix(.34354 .83056 -.51232 .55694 35.27 16.425)"
+        d="m-7.5625 8.5625c-0.4638 0.1002-0.8438 0.4717-0.9375 0.9687l-2.156 10.531c0.259 0.267 1.962 0.677 3.9998 1.063-1.9919 5.806-4.1988 12.379-2.8438 16.906 0.6521 0.172 1.9216-0.004 2.0938-0.656-1.1673-6.098 1.0041-10.95 3-15.844 2.0139 0.322 4.0247 0.571 5.0937 0.594l1.4687-9.719c0.1249-0.663-0.3059-1.281-0.9687-1.406l-8.25-2.4375c-0.1657-0.0312-0.3454-0.0334-0.5 0z"
+    />
+    <path
+        id="rect2447"
+        sodipodi:nodetypes="cccccc"
+        style="stroke-linejoin:round;stroke:#000000;stroke-linecap:round;fill:#a29b94"
+        d="m18.856 6.8112c0.652 0.1722 1.039 0.8357 0.867 1.4878-1.836 7.236-6.73 13.309-5.091 21.867-0.172 0.652-1.462 0.83-2.114 0.658-1.88-6.283 3.128-16.488 4.85-23.146 0.172-0.6525 0.836-1.0389 1.488-0.8668z"
+    />
+    <path
+        id="rect3224"
+        sodipodi:nodetypes="ccccccc"
+        style="stroke-linejoin:round;stroke:#000000;stroke-linecap:round;fill:#ffffff"
+        d="m14.957 1.3562l8.261 2.4396c0.663 0.1249 1.096 0.759 0.971 1.4217l-1.481 9.7075c-2.625-0.057-10.753-1.444-11.349-2.056l2.176-10.542c0.125-0.6626 0.759-1.0957 1.422-0.9708z"
+    />
+    <rect
+        id="rect3165"
+        style="stroke-linejoin:round;stroke:#000000;stroke-linecap:round;stroke-width:0.25;fill:#333333"
+        transform="matrix(-.98271 -.18515 -.18515 .98271 0 0)"
+        ry=".78261"
+        height="2.7304"
+        width="1.5652"
+        y="5.8776"
+        x="-17.819"
+    />
+    <rect
+        id="rect3167"
+        style="stroke-linejoin:round;stroke:#000000;stroke-linecap:round;stroke-width:0.25;fill:#333333"
+        transform="matrix(-.98271 -.18515 -.18515 .98271 0 0)"
+        ry=".78261"
+        height="2.7304"
+        width="1.5652"
+        y="5.8776"
+        x="-22.593"
+    />
+    <path
+        id="rect2383"
+        sodipodi:nodetypes="ccccccccc"
+        style="stroke-linejoin:round;stroke:#000000;stroke-linecap:round;stroke-width:.25;fill:#ff7c05"
+        d="m16.835 4.2455l3.823 0.6848c1.099 0.2072 1.635 1.101 1.428 2.2006l-0.609 3.6071c-0.207 1.1-1.03 1.26-2.13 1.052l-3.526-0.664c-1.099-0.207-1.697-0.582-1.49-1.6813l0.632-3.6381c0.207-1.0996 0.772-1.7683 1.872-1.5611z"
+    />
+    <path
+        id="rect3169"
+        sodipodi:nodetypes="ccccc"
+        style="stroke-linejoin:round;stroke:#000000;stroke-linecap:round;stroke-width:.25;fill:#ffffff"
+        d="m16.521 4.9878c1.297-0.4287 3.851 0.1565 4.443 0.8372 0.62 0.5977 1.123 3.1614-0.04 3.408-1.854 0.3301-3.678-0.4341-5.237-1.3229-1.11-0.6555-0.1-2.5606 0.834-2.9223z"
+    />
+    <path
+        id="path3172"
+        sodipodi:rx="2.2608695"
+        sodipodi:ry="2.2956522"
+        style="stroke-linejoin:round;stroke:#000000;stroke-linecap:round;fill:#ffffff"
+        sodipodi:type="arc"
+        d="m7.8609 22.609a2.2609 2.2957 0 1 1 -4.5218 0 2.2609 2.2957 0 1 1 4.5218 0z"
+        transform="matrix(.24568 .046287 -.046287 .24568 15.598 3.5928)"
+        sodipodi:cy="22.608696"
+        sodipodi:cx="5.5999999"
+    />
+    <path
+        id="path3174"
+        sodipodi:rx="2.4695652"
+        sodipodi:ry="2.5739131"
+        style="stroke-linejoin:round;stroke:#000000;stroke-linecap:round;fill:#ffffff"
+        sodipodi:type="arc"
+        d="m24.974 23.443a2.4696 2.5739 0 1 1 -4.939 0 2.4696 2.5739 0 1 1 4.939 0z"
+        transform="matrix(.24568 .046287 -.046287 .24568 15 3.5688)"
+        sodipodi:cy="23.443478"
+        sodipodi:cx="22.504349"
+    />
+  </g
+  >
+  <metadata
+    >
+    <rdf:RDF
+      >
+      <cc:Work
+        >
+        <dc:format
+          >image/svg+xml</dc:format
+        >
+        <dc:type
+            rdf:resource="http://purl.org/dc/dcmitype/StillImage"
+        />
+        <cc:license
+            rdf:resource="http://creativecommons.org/licenses/publicdomain/"
+        />
+        <dc:publisher
+          >
+          <cc:Agent
+              rdf:about="http://openclipart.org/"
+            >
+            <dc:title
+              >Openclipart</dc:title
+            >
+          </cc:Agent
+          >
+        </dc:publisher
+        >
+        <dc:title
+          >Funny Bus stop</dc:title
+        >
+        <dc:date
+          >2009-03-19T18:03:15</dc:date
+        >
+        <dc:description
+        />
+        <dc:source
+          >https://openclipart.org/detail/22592/funny-bus-stop-by-milovanderlinden</dc:source
+        >
+        <dc:creator
+          >
+          <cc:Agent
+            >
+            <dc:title
+              >milovanderlinden</dc:title
+            >
+          </cc:Agent
+          >
+        </dc:creator
+        >
+        <dc:subject
+          >
+          <rdf:Bag
+            >
+            <rdf:li
+              >cartoon bus stop</rdf:li
+            >
+          </rdf:Bag
+          >
+        </dc:subject
+        >
+      </cc:Work
+      >
+      <cc:License
+          rdf:about="http://creativecommons.org/licenses/publicdomain/"
+        >
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#Reproduction"
+        />
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#Distribution"
+        />
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#DerivativeWorks"
+        />
+      </cc:License
+      >
+    </rdf:RDF
+    >
+  </metadata
+  >
+</svg
+>
