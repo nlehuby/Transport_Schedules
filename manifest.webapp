@@ -1,6 +1,6 @@
 {
-  "name": "Transport Schedules",
-  "description": "Cette application permet de consulter les horaires des bus en opendata en région Île-de-France (RATP et SNCF Transilien). Les fiches horaires sauvegardées restent disponibles hors ligne.",
+  "name": "Horaires Bus",
+  "description": "Cette application permet de consulter les horaires des bus en opendata en région Île-de-France (RATP, SNCF Transilien, Noctilien). Les fiches horaires sauvegardées restent disponibles hors ligne.",
   "launch_path": "/liste.html",
   "icons": {
     "16": "/icons/icon16x16.png",
