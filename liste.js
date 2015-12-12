@@ -20,7 +20,8 @@ function List_FH_from_localStorage()
   LSlength = localStorage.length;
   if (LSlength == 0)
   {
-    document.getElementById("liste").innerHTML = "<p style='padding:10px 10px 0px 10px;'>Vous n'avez pas encore enregistré de fiches horaires. Recherchez un arrêt pour commencer.</p><hr>"
+    document.getElementById("liste").innerHTML = "<div class='panel panel-warning'>\
+                        <div class='panel-body'>Vous n'avez pas de fiches horaires enregistrées. Commencez par rechercher un arrêt  </div></div>"
   }
   else
   {
@@ -31,19 +32,30 @@ function List_FH_from_localStorage()
       {
         alert("une nouvelle version de l'application est disponible, vos favoris ont été réinitialisés.");
         localStorage.clear();
-        document.getElementById("liste").innerHTML = "<p style='padding:10px 10px 0px 10px;'>Recherchez un arrêt pour commencer.</p><hr>"
+        document.getElementById("liste").innerHTML = "<div class='panel panel-warning'><div class='panel-body'>Vous n'avez pas de fiches horaires enregistrées. Commencez par rechercher un arrêt  </div></div>"
       }
       else
       {
           fiche_horaire = $.parseJSON(localStorage[localStorage.key(i)]);
           var div_list = document.createElement("div");
-          div_list.className = "div_list";
-          dep_id = "departure_" + fiche_horaire.code_route + "_" + fiche_horaire.code_arret
-          div_list.innerHTML = '<p><a href="FH.html#fromliste?route='+ fiche_horaire.code_route +'&arret='+ fiche_horaire.code_arret +'">' + fiche_horaire.arret + '</p>'
-            + '<p>' + fiche_horaire.ligne + ' (' + fiche_horaire.reseau + ')' + '</p>'
-            + '<p>' + fiche_horaire.direction + '</a></p>'
-            + '<p><span id="'+dep_id+'">' + '--' + '</span></p>'
-            + '<p>' + '<a href="#" id="'+localStorage.key(i)+'"> <font size="2">Supprimer</font></a>' + '</p>' ; // TODO : idéalement, utiliser un appui long plutôt qu'un lien
+          dep_id = "departure_" + fiche_horaire.code_route + "_" + fiche_horaire.code_arret;
+          lien = 'FH.html#fromliste?route='+ fiche_horaire.code_route +'&arret='+ fiche_horaire.code_arret;
+          div_list.className = "panel panel-warning";
+          var div_header = document.createElement("div");
+          div_header.className = "panel-heading";
+          div_header.innerHTML = '<b>'+fiche_horaire.arret+'</b>';
+          div_list.appendChild(div_header);
+          
+          var div_content = document.createElement("div");
+          div_content.className = "panel-body";
+          div_content.innerHTML += '<p><img src="icons/icon32x32.png"></img><b>Bus</b> '+fiche_horaire.ligne+' ('+fiche_horaire.reseau+')</p>'
+          div_content.innerHTML += '<p><b>vers</b> '+fiche_horaire.direction+'</p>'
+          div_content.innerHTML += '<span id="' + dep_id + '">' + '--' + '</span><br>'
+          div_content.innerHTML += '<a id="'+localStorage.key(i)+'" class="pull-right">Supprimer</a>'
+          div_content.innerHTML += '<a href='+lien+'>Tous les horaires</a>'          
+          div_list.appendChild(div_content);
+          
+
           document.getElementById("liste").appendChild(div_list);
           
           Navitia_get_next_dep(fiche_horaire.code_arret, fiche_horaire.code_route)
@@ -92,6 +104,7 @@ function Navitia_get_next_dep(code_arret,code_route)  {
 
 /* intelligence de la page */
 $(document).ready(function(){
+    $.material.init();
     $.ajaxSetup( {
        beforeSend: function(xhr) { xhr.setRequestHeader("Authorization", "Basic " + btoa(navitia_api_key + ":" )); }
        });

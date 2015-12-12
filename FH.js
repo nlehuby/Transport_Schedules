@@ -9,6 +9,7 @@ var today = new Date()
 
 /* intelligence de la page */
 $(document).ready(function(){
+    $.material.init();
     $.ajaxSetup( {
        beforeSend: function(xhr) { xhr.setRequestHeader("Authorization", "Basic " + btoa(navitia_api_key + ":" )); }
        });
@@ -84,6 +85,7 @@ function display_FH(FH_data_object)  {
                 while (j < FH_data_object.horaires[i].length)
                 {
                     var span_min = document.createElement("span");
+                    span_min.className ="horaires";
                     span_min.innerHTML = FH_data_object.horaires[i][j];
                     if (j == 0) {document.getElementById("min"+ i.toString()).innerHTML = "" }
                     document.getElementById("min"+ i.toString()).appendChild(span_min);
@@ -136,7 +138,7 @@ function Navitia_get_FH(code_arret,code_route)  {
             fiche_horaire.ligne = data['stop_schedules'][0]['display_informations']['code'];
             fiche_horaire.reseau = data['stop_schedules'][0]['display_informations']['network'];
             fiche_horaire.direction = data['stop_schedules'][0]['display_informations']['direction'];
-            fiche_horaire.maj = "<img src='img/maj.png' align='absmiddle'></img> Mise à jour " + turn_number_to_day(today.getDay()) + " " + today.toLocaleFormat('%d/%m');
+            fiche_horaire.maj = " Mise à jour " + turn_number_to_day(today.getDay()) + " " + today.toLocaleFormat('%d/%m');
             
             fiche_horaire.horaires = []
             fiche_horaire.notes = []

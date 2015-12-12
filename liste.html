@@ -1,33 +1,53 @@
-<!DOCTYPE html>
-<html manifest="appcache.manifest">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
-    <title>Transport Schedules</title>
-    <link href="styles/layout.css" rel="stylesheet" type="text/css">
-    <style>
-      body {
-        font-family: 'Fira Sans', sans-serif;
-      }
-    </style>    
-  </head>
+<html>
 
-  <body>
-       <header>
-         <p style="padding:10px 10px 0px 10px;"> <img src="icons/icon32x32.png"> Mes fiches horaires</p>
-    </header>    
-    <section class="gaia-list fit scroll sticky">
-      <div id="liste"></div>
-            <p style="padding:10px 10px 0px 10px;"><a id="about">À propos de cette application</a></p>
-    </section>
-    <footer class="gaia-footer">
-      <button class="carrot-flat-button" id="search">Rechercher</button>
+    <head>
 
-    </footer>
-   
-    <script type="text/javascript" src="jquery-1.11.1.min.js"></script>
-    <script src="params.js"></script>
-    <script src="liste.js"></script>
-  </body>
+        <meta charset="utf-8">
+        <link href="assets/bootstrap/bootstrap.min.css" rel="stylesheet">
+        <link href="assets/material/material.min.css" rel="stylesheet">
+        <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1">
+        <title>Horaires Bus - liste des favoris</title>        
+
+    </head>
+
+    <body style="padding-top: 60px;margin-left:5px;margin-right:5px;">
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <container>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand">Horaires Bus</a>
+                </div>
+                <div class="navbar-collapse collapse navbar-responsive-collapse">
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a id="about">À propos</a></li>
+                        
+                    </ul>
+                </div>
+            </container>
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-md-3">
+                <div class="bs-component" id="liste">
+                </div>
+            </div>
+        </div>
+        <a class="btn btn-warning btn-fab btn-raised mdi-action-search pull-right" id="search"></a>
+
+        <script src="assets/jquery_ui/jquery-1.10.2.min.js"></script>
+        <script src="assets/bootstrap/bootstrap.min.js"></script>
+        <script src="assets/material/material.min.js"></script>
+        <script src="params.js"></script>
+        <script src="liste.js"></script>        
+
+    </body>
 
 </html>

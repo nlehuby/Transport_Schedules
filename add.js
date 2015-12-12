@@ -5,6 +5,7 @@ window.addEventListener("load", function() {
 code_arret = ''
 
 $(document).ready(function(){
+    $.material.init();
     /* gestion de l'authentification navitia */
     $.ajaxSetup( {
     beforeSend: function(xhr) { xhr.setRequestHeader("Authorization", "Basic " + btoa(navitia_api_key + ":" )); }
@@ -46,10 +47,19 @@ $(document).ready(function(){
                     success: function( data ) {
                        //console.log(data) // DEBUG
                        for (var i = 0; i < data['routes'].length; i++) {
+                          var contain_dir = document.createElement("div");
                           var elem_dir = document.createElement("div");
-                          elem_dir.innerHTML ='<a href="FH.html#fromadd?route='+ data['routes'][i]['id'] +'&arret='+  code_arret +'">Ligne '+ data['routes'][i]['line']['network']['name'] + ' '+data['routes'][i]['line']['code'] +", direction "+ data['routes'][i]['direction']['name'] +'</a>';
-                          elem_dir.className = "elem_dir";
-                          document.getElementById("directions_list").appendChild(elem_dir);
+                          //elem_dir.innerHTML ='<a href="FH.html#fromadd?route='+ data['routes'][i]['id'] +'&arret='+  code_arret +'">Ligne '+ data['routes'][i]['line']['network']['name'] + ' '+data['routes'][i]['line']['code'] +", direction "+ data['routes'][i]['direction']['name'] +'</a>';
+                          elem_dir.innerHTML = "<p class='list-group-item-text'><img src='icons/icon32x32.png'></img><b>Bus</b> "+data['routes'][i]['line']['code'] +" ("+data['routes'][i]['line']['network']['name']+")</p>"
+                          elem_dir.innerHTML += "<p class='list-group-item-text'><b>vers</b> "+data['routes'][i]['direction']['name']+"</p>" 
+                          lien = 'FH.html#fromadd?route='+ data['routes'][i]['id'] +'&arret='+  code_arret  
+                          elem_dir.innerHTML += "<p class='list-group-item-text'><a href="+lien+">Tous les horaires</a></p>"              
+                          elem_dir.className = "list-group-item";
+                          contain_dir.appendChild(elem_dir)
+                          document.getElementById("directions_list").appendChild(contain_dir);
+                          var separateur = document.createElement("div");
+                          separateur.className = "list-group-separator";
+                          document.getElementById("directions_list").appendChild(separateur);
                           }
                        }
                     });             
