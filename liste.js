@@ -77,7 +77,7 @@ function List_FH_from_localStorage()
 function Navitia_get_next_dep(code_arret,code_route)  {
    console.log('appel navitia : récupération des prochains passages')
    var now = new Date()
-   var navitia_params = "routes/" + code_route + "/stop_areas/" + code_arret + "/departures?from_datetime=" + now.toLocaleFormat('%Y%m%dT%H%M%S');
+   var navitia_params = "routes/" + code_route + "/stop_areas/" + code_arret + "/departures?from_datetime=" + now.toISOString();
    //console.log(navitia_params);
    $.ajax({
         url: "https://api.navitia.io/v1/coverage/"+ navitia_coverage + "/" + navitia_params,

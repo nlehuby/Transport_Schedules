@@ -17,7 +17,7 @@ $(document).ready(function(){
     console.log("FH arrêt : " + qsArret + " ; route : " + qsRoute);
     
     console.log('Affichage FH depuis localStorage');
-    localStorage_get_FH(qsArret,qsRoute);   
+    localStorage_get_FH(qsArret,qsRoute);  
 
     console.log("Tentative d'affichage FH depuis navitia");
     Navitia_get_FH(qsArret,qsRoute);
@@ -111,19 +111,9 @@ function retry_on_navitia_error(data, code_arret,code_route){
     }
 }
 
-function turn_number_to_day(number){
-    if (number == 1) {return "lundi"}
-    else if (number == 2) {return "mardi"}
-    else if (number == 3) {return "mercredi"}
-    else if (number == 4) {return "jeudi"}
-    else if (number == 5) {return "vendredi"}            
-    else if (number == 6) {return "samedi"}
-    else if (number == 0) {return "dimanche"}    
-}
-
 function Navitia_get_FH(code_arret,code_route)  {
    console.log('appel navitia : récupération de la fiche horaire')
-   var navitia_params = "stop_areas/" + code_arret + "/routes/" + code_route + "/stop_schedules?from_datetime=" + today.toLocaleFormat('%Y%m%dT000000');
+   var navitia_params = "stop_areas/" + code_arret + "/routes/" + code_route + "/stop_schedules?from_datetime=" + today.toISOString();
    //console.log(navitia_params);
    $.ajax({
         url: "https://api.navitia.io/v1/coverage/"+ navitia_coverage + "/" + navitia_params,
@@ -131,17 +121,18 @@ function Navitia_get_FH(code_arret,code_route)  {
         global: true,
         error: function(data) {retry_on_navitia_error(data, code_arret,code_route)},
         success: function(data) {
-            //console.log(data) //DEBUG
+            //console.log(data) //DEBUG           
             fiche_horaire.code_arret = data['stop_schedules'][0]['stop_point']['stop_area']['id'];
             fiche_horaire.code_route =  data['stop_schedules'][0]['route']['id']  ;          
             fiche_horaire.arret = data['stop_schedules'][0]['stop_point']['name'];
             fiche_horaire.ligne = data['stop_schedules'][0]['display_informations']['code'];
             fiche_horaire.reseau = data['stop_schedules'][0]['display_informations']['network'];
             fiche_horaire.direction = data['stop_schedules'][0]['display_informations']['direction'];
-            fiche_horaire.maj = " Mise à jour " + turn_number_to_day(today.getDay()) + " " + today.toLocaleFormat('%d/%m');
+            fiche_horaire.maj = " Mise à jour " + today.toLocaleDateString('fr-FR', {weekday: 'long', day: 'numeric', month: 'long'});
             
             fiche_horaire.horaires = []
             fiche_horaire.notes = []
+            
 
             // init horaires - création à vide
             for (var j = 0; j < 25; ++j) {
